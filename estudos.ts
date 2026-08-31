@@ -4,6 +4,9 @@ string
 number
 boolean
 any => aceita qualquer coisa
+
+// Tipagem em arrys
+// Tipagem de funções
 */
 
 // String pra texto.
@@ -43,3 +46,46 @@ let n: any;
 n = "Israel";
 n = 12;
 
+//Tipagem de array, Tipagem explicita. "Comum Anotação de tipos(type Annotation"
+let names: string[] = ["Israel", "Mayk", "Anne"];
+let numbers: number[] = [1, 2, 3, 4, 5];
+
+if (numbers.length > 4) {
+  for (let i = 0; i < numbers.length; i++) {
+    console.log(numbers[i]);
+  }
+} else {
+  console.log("Falso");
+}
+
+let res = names.includes("Mayk");
+let position = names.indexOf("Mayk");
+let i = names.indexOf("Anne");
+
+for (let p = 0; p < names.length; p++) {
+  console.log(names[p]);
+}
+
+if (res) {
+  console.log("sim");
+}
+
+console.log("Posição do Mayk:", position);
+
+// Tipagem de funções
+function sun(x: number, y: number): number {
+  const result = x + y;
+  console.log("Resultado", result);
+  return result;
+}
+
+const result = sun(7, 9);
+
+const showMessagee = (name: string, sobrenome: string): string => {
+  const messagee = "Ola " + name + sobrenome;
+  return messagee;
+};
+
+showMessagee("Israel", "Santos");
+const r = showMessagee("israel ", "santos");
+console.log(r);
