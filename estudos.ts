@@ -7,6 +7,7 @@ any => aceita qualquer coisa
 
 // Tipagem em arrys
 // Tipagem de funções
+// Tipagem de Objeto
 */
 
 // String pra texto.
@@ -89,3 +90,27 @@ const showMessagee = (name: string, sobrenome: string): string => {
 showMessagee("Israel", "Santos");
 const r = showMessagee("israel ", "santos");
 console.log(r);
+
+// Tipagem de Objeto
+let user: { name: string; age: number; rua: boolean } = {
+  name: "Israel",
+  age: 12,
+  rua: false,
+};
+
+console.log(user.name, user.age, user.rua);
+
+function signIn({
+  email,
+  password,
+  avatar,
+}: {
+  email: string;
+  password: number;
+  avatar?: boolean;
+}) {
+  const res = console.log(email, password, avatar);
+  return res;
+}
+
+signIn({ email: "Israel@gmaial.com", password: 123, avatar: true });
