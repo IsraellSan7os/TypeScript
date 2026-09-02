@@ -9,6 +9,7 @@ any => aceita qualquer coisa
 // Tipagem em arrys
 // Tipagem de funções
 // Tipagem de Objeto
+// Null e Undefined
 */
 // String pra texto.
 let username;
@@ -85,3 +86,15 @@ function signIn({ email, password, avatar, }) {
     return res;
 }
 signIn({ email: "Israel@gmaial.com", password: 123, avatar: true });
+// Null e Undefined
+let value = 12;
+console.log(value);
+// Ausencia de valor. Define intecional
+let email = undefined;
+// console.log(email);
+if (!email) {
+    console.log("Não existe um email");
+}
+else {
+    console.log("Existe um email");
+}
