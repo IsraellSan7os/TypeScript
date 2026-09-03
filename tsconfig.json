@@ -8,5 +8,9 @@
     "outDir": "dist",
     "rootDir": "."
   },
-  "include": ["*.ts"]
+  "include": [
+    "*.ts",
+    "tipos primitivos/tiposPrimitivos.ts",
+    "tipos personalizados/tiposPersonalizados.ts"
+  ]
 }
