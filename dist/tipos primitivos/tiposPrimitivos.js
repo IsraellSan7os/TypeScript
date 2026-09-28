@@ -99,7 +99,7 @@ else {
     console.log("Existe um email");
 }
 // Union Types
-// Pemos atribuir mais de um tipo primetivo a uma variavel
+// Pemdos atribuir mais de um tipo primetivo a uma variavel
 /*
   Ex. Utilizado quando fazermos uma consulta no banco de dados e acaba que precia retornar
   2 elemento , tipo data de nascimento e nome

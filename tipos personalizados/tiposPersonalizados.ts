@@ -4,7 +4,7 @@
 */
 
 interface Product {
-  id: number;
+  id: number | string;
   nam: string;
 }
 
@@ -22,7 +22,7 @@ let id = product.id;
 
 let interfaces = function () {
   interface Utils {
-    city: string;
+    city: string | string;
     street: string;
     zipCode: number;
   }
@@ -39,6 +39,19 @@ let interfaces = function () {
     age: number;
   }
 
+  interface Teacher {
+    price: number;
+  }
+
+  let student: Student = {
+    id: 1,
+    name: "Anne",
+    age: 360,
+    city: "Tobias Barreto",
+    street: "Valdivino Malaquias",
+    zipCode: 495000,
+  };
+
   let teacher: Teacher = {
     id: 1,
     name: "Israel",
@@ -46,6 +59,7 @@ let interfaces = function () {
     city: "Tobias Barreto",
     street: "Valdivino Malaquias",
     zipCode: 3500,
+    price: 23,
   };
   console.log(
     teacher.id,
@@ -55,6 +69,137 @@ let interfaces = function () {
     teacher.id,
     teacher.zipCode,
   );
+
+  console.log(
+    student.id,
+    student.name,
+    student.age,
+    student.city,
+    student.street,
+    student.zipCode,
+  );
 };
 
 interfaces();
+
+// Type
+// União de type
+
+type Productor = {
+  id: number;
+  name: string;
+  code: number;
+};
+
+function newProductt(prod: Productor) {
+  console.log(prod);
+}
+
+newProductt({ id: 1, name: "Produto x", code: 12 });
+console.log(newProductt);
+
+// Intersecção de tipos
+
+type Person = {
+  id: number | string;
+  name: string | number;
+};
+
+type Teacher = Person & {
+  subjects: string;
+};
+
+type Student = Person & {
+  age: Number;
+};
+
+let teacher: Teacher;
+let student: Student;
+
+type TypeString = string;
+
+// Asserção de tipos
+type UserResponse = {
+  id: number;
+  name: string;
+  avatar: string;
+};
+
+let userResponse = {
+  id: 1,
+  name: "Avatar",
+  avatar: "null",
+} as UserResponse;
+
+console.log(userResponse.avatar);
+console.log(userResponse.id);
+console.log(userResponse.name);
+
+// Restringindo valores
+interface Producutos {
+  name: string;
+  category: "eletronica" | "roupa" | "alimento";
+}
+
+const products: Producutos = {
+  category: "eletronica",
+  name: "Vendido",
+};
+
+// Enums
+enum Perfile {
+  Admin = 1,
+  Client = 2,
+  Seller = 3,
+}
+
+let Selected: number = Perfile.Admin;
+
+console.log("Retornando o admin", Selected);
+
+// Generic
+function useState() {
+  let state: number | string;
+
+  function get() {
+    return state;
+  }
+
+  function set(newValue: number | string) {
+    state = newValue;
+  }
+
+  return { get, set };
+}
+
+let newState = useState();
+newState.get();
+newState.set(123);
+newState.set("Nome");
+
+/**
+ * S => state
+ * T => type
+ * K => key
+ * V => value
+ * E => element
+ */
+// union
+function start<T extends number | string>() {
+  let num: T;
+
+  function i() {
+    return num;
+  }
+
+  function sett(newW: T) {
+    num = newW;
+  }
+
+  return { i, sett };
+}
+
+let retur = start();
+retur.i();
+retur.sett("Aceita tambe ,");
+retur.sett(123);
