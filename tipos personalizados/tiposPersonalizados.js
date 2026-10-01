@@ -50,8 +50,8 @@ console.log(userResponse.avatar);
 console.log(userResponse.id);
 console.log(userResponse.name);
 const products = {
-    category: "roupa",
-    name: "Lojão",
+    category: "eletronica",
+    name: "Vendido",
 };
 // Enums
 var Perfile;
@@ -60,12 +60,8 @@ var Perfile;
     Perfile[Perfile["Client"] = 2] = "Client";
     Perfile[Perfile["Seller"] = 3] = "Seller";
 })(Perfile || (Perfile = {}));
-let admin = Perfile.Admin;
-let client = Perfile.Client;
-let seller = Perfile.Seller;
-console.log(`Administrador ${admin}`);
-console.log(`Cliente ${client}`);
-console.log(`Vendedor ${seller}`);
+let Selected = Perfile.Admin;
+console.log("Retornando o admin", Selected);
 // Generic
 function useState() {
     let state;

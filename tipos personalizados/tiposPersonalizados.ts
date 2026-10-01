@@ -22,7 +22,7 @@ let id = product.id;
 
 let interfaces = function () {
   interface Utils {
-    city: string | string;
+    city: string | number;
     street: string;
     zipCode: number;
   }
@@ -142,8 +142,8 @@ interface Producutos {
 }
 
 const products: Producutos = {
-  category: "eletronica",
-  name: "Vendido",
+  category: "roupa",
+  name: "Lojão",
 };
 
 // Enums
@@ -153,9 +153,13 @@ enum Perfile {
   Seller = 3,
 }
 
-let Selected: number = Perfile.Admin;
+let admin: number = Perfile.Admin;
+let client: number = Perfile.Client;
+let seller: number = Perfile.Seller;
 
-console.log("Retornando o admin", Selected);
+console.log(`Administrador ${admin}`);
+console.log(`Cliente ${client}`);
+console.log(`Vendedor ${seller}`);
 
 // Generic
 function useState() {

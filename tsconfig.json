@@ -11,6 +11,7 @@
   "include": [
     "*.ts",
     "tipos primitivos/tiposPrimitivos.ts",
-    "tipos personalizados/tiposPersonalizados.ts"
+    "tipos personalizados/tiposPersonalizados.ts",
+    "Utilitários do TypeScript/Utilitarios.ts"
   ]
 }
